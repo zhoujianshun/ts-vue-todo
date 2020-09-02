@@ -1,15 +1,23 @@
 import Vue from 'vue';
-import Vuex from 'vuex';
+import Vuex, { StoreOptions } from 'vuex';
+import { IRootState } from './types'
+import todo from '@/store/todo'
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  },
-});
+const store: StoreOptions<IRootState> =  {
+    // state: {
+
+    // },
+    // mutations: {
+
+    // },
+    // actions: {
+
+    // },
+    modules: {
+        todo,
+    },
+};
+
+export default new Vuex.Store(store)
